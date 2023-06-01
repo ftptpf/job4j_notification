@@ -16,6 +16,7 @@ public class NotificationService {
 
     @KafkaListener(topics = "messengers")
     public void saveOrder(Order order) {
+        log.debug(order.toString());
         repository.save(order);
     }
 }
